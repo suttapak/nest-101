@@ -15,5 +15,18 @@ services:
     networks:
       - suttapak
 
+  test-db:
+    container_name: test-db
+    image: postgres
+    restart: always
+    ports:
+      - 5435:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
+      - suttapak
+
 networks:
   suttapak:
